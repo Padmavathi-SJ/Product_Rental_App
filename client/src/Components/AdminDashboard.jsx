@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-//import AdminHome from './AdminHome';
 import ProductsList from './ProductList';
 import AddProduct from './AddProduct';
 import AdminLogin from './AdminLogin';
 import AdminSignUp from './AdminSignUp';
-import EditProduct from './EditProduct;
+import EditProduct from './EditProduct';  // fixed missing closing quote
 import '../css/AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -27,7 +26,6 @@ const AdminDashboard = () => {
         <nav className="admin-nav">
           <h2>Admin Panel</h2>
           <div className="nav-links">
-            <button onClick={() => navigate('/admin/home')}>Dashboard</button>
             <button onClick={() => navigate('/admin/products')}>Products</button>
             <button onClick={() => navigate('/admin/add-product')}>Add Product</button>
             <button onClick={handleLogout} className="logout-btn">Logout</button>
@@ -39,10 +37,9 @@ const AdminDashboard = () => {
         <Routes>
           <Route path="/login" element={<AdminLogin setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<AdminSignUp setIsLoggedIn={setIsLoggedIn} />} />
-         
           <Route path="/products" element={<ProductsList />} />
           <Route path="/add-product" element={<AddProduct />} />
-        <Route path="/products/edit/:id" element={<EditProduct />} />
+          <Route path="/products/edit/:id" element={<EditProduct />} />
         </Routes>
       </div>
     </div>
