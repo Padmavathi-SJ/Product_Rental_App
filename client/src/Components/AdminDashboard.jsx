@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import AdminHome from './AdminHome';
+//import AdminHome from './AdminHome';
 import ProductsList from './ProductList';
 import AddProduct from './AddProduct';
 import AdminLogin from './AdminLogin';
 import AdminSignUp from './AdminSignUp';
+import EditProduct from './EditProduct;
 import '../css/AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -38,10 +39,10 @@ const AdminDashboard = () => {
         <Routes>
           <Route path="/login" element={<AdminLogin setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/signup" element={<AdminSignUp setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path="/home" element={<AdminHome />} />
+         
           <Route path="/products" element={<ProductsList />} />
           <Route path="/add-product" element={<AddProduct />} />
-          <Route path="/products/edit/:id" element={<EditProduct />} />
+        <Route path="/products/edit/:id" element={<EditProduct />} />
         </Routes>
       </div>
     </div>
